@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "jsonrpc2",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/anquii/JSONRPC2.git",
+      "state" : {
+        "revision" : "e0c591b3f9aa93d3236855034289bf061cf644de",
+        "version" : "2.0.0"
+      }
+    }
+  ],
+  "version" : 2
+}

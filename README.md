@@ -1,8 +1,8 @@
-# Electrum
+# ElectrumX
 
 [![Platform](https://img.shields.io/badge/Platforms-macOS%20%7C%20iOS-blue)](#platforms)
 [![Swift Package Manager compatible](https://img.shields.io/badge/SPM-compatible-orange)](#swift-package-manager)
-[![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/anquii/Electrum/blob/main/LICENSE)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/anquii/ElectrumX/blob/main/LICENSE)
 
 A [JSON-RPC 2.0](https://www.jsonrpc.org/specification) client implementation of [ElectrumX](https://github.com/spesmilo/electrumx/pull/90) in Swift.
 
@@ -16,19 +16,25 @@ A [JSON-RPC 2.0](https://www.jsonrpc.org/specification) client implementation of
 
 Add the following line to your `Package.swift` file:
 ```swift
-.package(url: "https://github.com/anquii/Electrum.git", from: "0.1.0")
+.package(url: "https://github.com/anquii/ElectrumX.git", from: "0.1.0")
 ```
 ...or integrate with Xcode via `File -> Swift Packages -> Add Package Dependency...` using the URL of the repository.
 
 ## Usage
 
 ```swift
-import Electrum
+import ElectrumX
+
+let service = ElectrumXService(endpoint: endpoint, parameters: parameters)
+try await service.startConnection()
+try await service.version(params: versionParams)
+let response = try await service.balance(scriptHash: scriptHash)
+try await service.cancelConnection()
 ```
 
 ## License
 
-`Electrum` is licensed under the terms of the MIT license. See the [LICENSE](LICENSE) file for more information.
+`ElectrumX` is licensed under the terms of the MIT license. See the [LICENSE](LICENSE) file for more information.
 
 ## Donations
 
